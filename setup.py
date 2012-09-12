@@ -1,4 +1,4 @@
-# Copyright 2011 OpenStack, LLC
+# Copyright 2011-2012 OpenStack, LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,15 +15,15 @@
 import setuptools
 
 setuptools.setup(
-    name='rax_networks_python_novaclient_ext',
-    version='0.1',
+    name='os_networksv2_python_novaclient_ext',
+    version='0.2',
     description='Adds rackspace networks support to python-novaclient',
     long_description=open('README.rst').read(),
     author='Rackspace',
-    author_email='jkoelker@rackspace.com',
-    url='https://github.com/rackspace/rax_networks_python_novaclient_ext',
+    author_email='jkoelker@rackspace.com, matt.dietz@rackspace.com',
+    url='https://github.com/rackspace/os_networksv2_python_novaclient_ext',
     license='Apache License, Version 2.0',
-    py_modules=['rax_networks_python_novaclient_ext'],
+    py_modules=['os_networksv2_python_novaclient_ext'],
     install_requires=['python-novaclient'],
     classifiers=[
         'Development Status :: 3 - Alpha',
