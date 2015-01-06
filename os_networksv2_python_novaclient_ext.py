@@ -13,6 +13,7 @@
 # limitations under the License.
 
 from novaclient import base
+from novaclient.openstack.common import cliutils
 from novaclient import utils
 
 
@@ -38,7 +39,7 @@ class NetworkManager(base.ManagerWithFind):
         return self._create('/os-networksv2', body, 'network')
 
 
-@utils.arg('network_id', metavar='<network_id>', help='ID of network')
+@cliutils.arg('network_id', metavar='<network_id>', help='ID of network')
 def do_network(cs, args):
     """
     Show a network
@@ -55,9 +56,9 @@ def do_network_list(cs, args):
     utils.print_list(networks, ['ID', 'Label', 'CIDR'])
 
 
-@utils.arg('label', metavar='<network_label>',
+@cliutils.arg('label', metavar='<network_label>',
            help='Network label (ex. my_new_network)')
-@utils.arg('cidr', metavar='<cidr>',
+@cliutils.arg('cidr', metavar='<cidr>',
            help='IP block to allocate from (ex. 172.16.0.0/24 or '
                 '2001:DB8::/64)')
 def do_network_create(cs, args):
@@ -69,7 +70,7 @@ def do_network_create(cs, args):
     utils.print_dict(network._info)
 
 
-@utils.arg('network_id', metavar='<network_id>', help='ID of network')
+@cliutils.arg('network_id', metavar='<network_id>', help='ID of network')
 def do_network_delete(cs, args):
     """
     Delete a network
